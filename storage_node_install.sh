@@ -1,4 +1,4 @@
-sudo apt-get update && sudo apt-get install clang cmake build-essential openssl pkg-config libssl-dev jq git bc
+sudo apt-get update && sudo apt-get install clang cmake build-essential openssl pkg-config libssl-dev jq git bc cargo
 
 cd $HOME &&
 ver="1.22.0" &&
