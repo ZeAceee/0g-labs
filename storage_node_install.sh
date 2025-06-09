@@ -12,6 +12,8 @@ go version
 
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
+rm -rf $HOME/0g-storage-node
+
 git clone -b v1.0.0 https://github.com/0glabs/0g-storage-node.git && cd $HOME/0g-storage-node && git stash && git fetch --all --tags && git checkout 347cd3e && git submodule update --init && cargo build --release
 
 rm -rf $HOME/0g-storage-node/run/config.toml && curl -o $HOME/0g-storage-node/run/config.toml https://docs.ze-ace.com/0g-labs/config.toml && nano $HOME/0g-storage-node/run/config.toml
