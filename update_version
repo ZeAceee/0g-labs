@@ -3,6 +3,11 @@ echo "更新中"
 sudo systemctl stop zgs
 sleep 1
 
+sudo apt-get update -y                                                                            
+sudo apt-get openssl libssl-dev pkg-config -y
+sudo apt install protobuf-compiler -y
+sleep 1
+
 mv $HOME/0g-storage-node/run/config.toml $HOME/config.toml.backup
 sleep 1
 
