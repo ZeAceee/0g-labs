@@ -1,3 +1,5 @@
+echo "更新中"
+
 sudo systemctl stop zgs
 
 cp $HOME/0g-storage-node/run/config.toml $HOME/config.toml.backup
