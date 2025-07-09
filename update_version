@@ -1,25 +1,25 @@
 echo "更新中"
 
 sudo systemctl stop zgs
-sleep1
+sleep 1
 
-cp $HOME/0g-storage-node/run/config.toml $HOME/config.toml.backup
-sleep1
+mv $HOME/0g-storage-node/run/config.toml $HOME/config.toml.backup
+sleep 1
 
 cd $HOME/0g-storage-node
 git fetch --all --tags
 git checkout v1.1.0
 git submodule update --init
 cargo build --release
-sleep1
+sleep 1
 
-cp $HOME/config.toml.backup $HOME/0g-storage-node/run/config.toml
-sleep1
+mv $HOME/config.toml.backup $HOME/0g-storage-node/run/config.toml
+sleep 1
 
 sudo systemctl start zgs
-sleep1
+sleep 1
 
 rm -rf $HOME/config.toml.backup
-sleep1
+sleep 1
 
 $HOME/0g-storage-node/target/release/zgs_node --version
