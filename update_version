@@ -1,0 +1,17 @@
+sudo systemctl stop zgs
+
+cp $HOME/0g-storage-node/run/config.toml $HOME/config.toml.backup
+
+cd $HOME/0g-storage-node
+git fetch --all --tags
+git checkout v1.1.0
+git submodule update --init
+cargo build --release
+
+cp $HOME/config.toml.backup $HOME/0g-storage-node/run/config.toml
+
+sudo systemctl start zgs
+
+rm -rf $HOME/config.toml.backup
+
+$HOME/0g-storage-node/target/release/zgs_node --version
